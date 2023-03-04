@@ -38,7 +38,7 @@ def show_book(_cursor):
     
     # data sets and display results
     for book in books:
-        print(" Book Name: {}\n Author: {}\n Details: {}\n".format(book[0], book[1], book[2]))
+        print(" Book Name: {}\n Author: {}\n Details: {}\n".format(book[1], book[2], book[3]))
 
 # show locations
 def show_locations(_cursor):
@@ -108,7 +108,7 @@ def show_books_to_add(_cursor, _user_id):
         print("     Book Id: {}\n       Book Name: {}\n".format(book[0], book[1]))
 
 def add_book_to_wishlist(_cursor, _user_id, _book_id):
-    _cursor.execute("INSERT INTO wishlist(user_id, book_id) VALUES{}, {})".format(_user_id, _book_id))
+    _cursor.execute("INSERT INTO wishlist(user_id, book_id) VALUES({}, {})".format(_user_id, _book_id))
 
 try:
     # try/catch block for errors within MySQL 
